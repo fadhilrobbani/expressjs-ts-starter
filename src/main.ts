@@ -13,12 +13,4 @@ app.get('/login', (req, res) => {
   }
 });
 
-app.get('/data', (req, res) => {
-  res.set('Content-type', 'application/json');
-  res.send({
-    code: 200,
-    status: 'OK',
-  });
-});
-
 app.listen(3000, () => console.log('⚡server listen port 3000 ⚡'));

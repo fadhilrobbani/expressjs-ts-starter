@@ -1,5 +1,5 @@
-import express, { Express } from 'express';
 import request from 'supertest';
+import express, { Express } from 'express';
 
 const app: Express = express();
 app.get('/', (req, res) => {
@@ -18,13 +18,3 @@ test('test get login', async () => {
   const response = await request(app).get('/login').query({ name: 'fadhil' });
   expect(response.text).toBe('hello fadhil');
 });
-
-app.get('/data', (req, res) => {
-  res.set('Content-type', 'application/json');
-  res.send({
-    code: 200,
-    status: 'OK',
-  });
-});
-
-app.listen(3001, () => console.log('⚡server listen port 3000 ⚡'));
